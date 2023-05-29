@@ -58,11 +58,11 @@ module.exports = (env = {}) => {
               options: {
                 outputPath: "images",
                 name: "[path][name].[ext]",
+                // relative paths publicPath: "../"
               },
             },
           ],
         },
-
         // Loading fonts
         {
           test: /\.(ttf|otf|eot|woff|woff2)$/,

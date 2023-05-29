@@ -1,4 +1,5 @@
 import { HomePage } from "../../pages/home-page/home-page.jsx";
+import { ProductsPage } from "../../pages/products-page/products-page.jsx";
 import { Component } from "react";
 
 class App extends Component {
@@ -44,13 +45,61 @@ class App extends Component {
           width: 256,
         },
       ],
+      productsList: [
+        {
+          id: 0,
+          name: "Name Product",
+          price: 100,
+        },
+        {
+          id: 1,
+          name: "Name Product",
+          price: 100,
+        },
+        {
+          id: 2,
+          name: "Name Product",
+          price: 100,
+        },
+        {
+          id: 3,
+          name: "Name Product",
+          price: 100,
+        },
+        {
+          id: 4,
+          name: "Name Product",
+          price: 100,
+        },
+        {
+          id: 5,
+          name: "Name Product",
+          price: 100,
+        },
+        {
+          id: 6,
+          name: "Name Product",
+          price: 100,
+        },
+        {
+          id: 7,
+          name: "Name Product",
+          price: 100,
+        },
+        {
+          id: 8,
+          name: "Name Product",
+          price: 100,
+        },
+      ],
     };
   }
   render() {
-    const { questions, aboutItems } = this.state;
+    const { questions, aboutItems, productsList } = this.state;
     return (
       <div className="app">
-        <HomePage questions={questions} aboutItems={aboutItems} />
+        {/* <HomePage questions={questions} aboutItems={aboutItems} /> */}
+        <ProductsPage productsList={productsList} />
       </div>
     );
   }

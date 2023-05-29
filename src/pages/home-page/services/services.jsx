@@ -1,4 +1,4 @@
-import globe from "../../../../public/images/globe.svg";
+import cream from "../../../../public/images/cream.svg";
 import crown from "../../../../public/images/crown.svg";
 import mascara from "../../../../public/images/mascara.svg";
 export const Services = () => {
@@ -24,7 +24,7 @@ export const Services = () => {
           </p>
         </li>
         <li className="services__item">
-          <img className="services__img" src={globe} alt="tonal cream" />
+          <img className="services__img" src={cream} alt="tonal cream" />
           <h5 className="services__title">Tonal cream.</h5>
           <p className="services__text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in
