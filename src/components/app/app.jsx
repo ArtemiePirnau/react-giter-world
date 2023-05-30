@@ -1,6 +1,10 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Component } from "react";
+
+import { Header } from "../header/header.jsx";
 import { HomePage } from "../../pages/home-page/home-page.jsx";
 import { ProductsPage } from "../../pages/products-page/products-page.jsx";
-import { Component } from "react";
+import { OneProduct } from "../../pages/one-product/one-product.jsx";
 
 class App extends Component {
   constructor(props) {
@@ -98,8 +102,22 @@ class App extends Component {
     const { questions, aboutItems, productsList } = this.state;
     return (
       <div className="app">
-        {/* <HomePage questions={questions} aboutItems={aboutItems} /> */}
-        <ProductsPage productsList={productsList} />
+        <Router>
+          <Header />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <HomePage questions={questions} aboutItems={aboutItems} />
+              }
+            />
+            <Route
+              path="/products-page"
+              element={<ProductsPage productsList={productsList} />}
+            />
+            <Route path="/one-product" element={<OneProduct />} />
+          </Routes>
+        </Router>
       </div>
     );
   }

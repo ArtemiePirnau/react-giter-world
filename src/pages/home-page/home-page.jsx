@@ -10,7 +10,6 @@ import { Footer } from "../../components/footer/footer.jsx";
 export const HomePage = ({ aboutItems, questions }) => {
   return (
     <>
-      <Header />
       <Discover />
       <Services />
       <Products />

@@ -1,46 +1,48 @@
+import { Link } from "react-router-dom";
 import logo from "../../../public/images/logo.svg";
 import cart from "../../../public/images/cart.svg";
+import { Search } from "../search/search.jsx";
 
 export const Header = () => {
   return (
     <header className="header">
       <div className="header__inner">
         <div className="header__logo">
-          <img className="header__logo-img" src={logo} alt="logo" />
-          <span className="header__logo-text">Giter World</span>
+          <Link className="header__logo-link" to="/">
+            <img className="header__logo-img" src={logo} alt="logo" />
+            <span className="header__logo-text">Giter World</span>
+          </Link>
         </div>
         <nav className="menu">
           <ul className="menu__list">
             <li className="menu__item">
-              <a className="menu__link" href="/">
+              <Link className="menu__link" to="/">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="menu__item">
-              <a className="menu__link" href="#">
+              <Link className="menu__link" to="/products-page">
                 Products
-              </a>
+              </Link>
             </li>
             <li className="menu__item">
-              <a className="menu__link" href="#">
+              <Link className="menu__link" to="/about-us">
                 About us
-              </a>
+              </Link>
             </li>
             <li className="menu__item">
-              <a className="menu__link" href="#">
+              <Link className="menu__link" to="/contacts">
                 Contacts
-              </a>
-            </li>
-            <li className="menu__item">
-              <a className="menu__link" href="#">
-                Categories
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
+        <Search />
         <button className="cart">
-          <span className="cart__text">Cart</span>
-          <img className="cart__img" src={cart} alt="cart icon" />
+          <Link to="/cart">
+            <span className="cart__text">Cart</span>
+            <img className="cart__img" src={cart} alt="cart icon" />
+          </Link>
         </button>
       </div>
     </header>

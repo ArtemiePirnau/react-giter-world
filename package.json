@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --env MODE=development",
+    "homepage": "https://artemiepirnau.github.io/react-giter-world/dist/",
     "start": "webpack-dev-server",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -44,9 +45,13 @@
     "cors": "^2.8.5",
     "jquery": "^3.7.0",
     "prop-types": "^15.8.1",
+    "rateyo": "^3.0.0-alpha.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-rater": "^6.0.5",
+    "react-rating": "^2.0.5",
     "react-router-dom": "^6.3.0",
+    "react-star-rate": "^0.2.0",
     "redux": "^4.2.0",
     "url-loader": "^4.1.1"
   }
