@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import logo from "../../../public/images/logo.svg";
 import cart from "../../../public/images/cart.svg";
 import { Search } from "../search/search.jsx";
+import { useState } from "react";
 
-export const Header = () => {
+export const Header = ({ toggleHide }) => {
   return (
     <header className="header">
       <div className="header__inner">

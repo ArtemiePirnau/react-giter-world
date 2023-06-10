@@ -1,125 +1,59 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Component } from "react";
+import { useSelector } from "react-redux";
+import { useState } from "react";
 
 import { Header } from "../header/header.jsx";
 import { HomePage } from "../../pages/home-page/home-page.jsx";
 import { ProductsPage } from "../../pages/products-page/products-page.jsx";
 import { OneProduct } from "../../pages/one-product/one-product.jsx";
+import { AboutUs } from "../../pages/about-us/about-us.jsx";
+import { Contacts } from "../../pages/contacts/contacts.jsx";
+import { ParfumeryCategories } from "../../pages/products-page/parfumery-categories/parfumery-categories.jsx";
+import { CosmeticsCategories } from "../../pages/products-page/cosmetics-category/cosmetics-category.jsx";
+const App = () => {
+  const [isHide, setHide] = useState(false);
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      questions: [
-        {
-          id: 0,
-          title: " Чем занимается наша компания ?",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in mollis nibh. Fusce sit amet sem venenatis,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in mollis nibh. Fusce sit amet sem venenatis,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in mollis nibh. Fusce sit amet sem venenatis,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in mollis nibh. Fusce sit amet sem venenatis,",
-        },
-        {
-          id: 1,
-          title: " Чем занимается наша компания ?",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in mollis nibh. Fusce sit amet sem venenatis,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in mollis nibh. Fusce sit amet sem venenatis,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in mollis nibh. Fusce sit amet sem venenatis,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in mollis nibh. Fusce sit amet sem venenatis,",
-        },
-        {
-          id: 2,
-          title: " Чем занимается наша компания ?",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in mollis nibh. Fusce sit amet sem venenatis,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in mollis nibh. Fusce sit amet sem venenatis,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in mollis nibh. Fusce sit amet sem venenatis,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in mollis nibh. Fusce sit amet sem venenatis,",
-        },
-        {
-          id: 3,
-          title: " Чем занимается наша компания ?",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in mollis nibh. Fusce sit amet sem venenatis,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in mollis nibh. Fusce sit amet sem venenatis,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in mollis nibh. Fusce sit amet sem venenatis,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in mollis nibh. Fusce sit amet sem venenatis,",
-        },
-      ],
-      aboutItems: [
-        {
-          id: 0,
-          title: "Quality",
-          width: 480,
-        },
-        {
-          id: 1,
-          title: "The fragrance",
-          width: 480,
-        },
-        {
-          id: 2,
-          title: "Price",
-          width: 256,
-        },
-      ],
-      productsList: [
-        {
-          id: 0,
-          name: "Name Product",
-          price: 100,
-        },
-        {
-          id: 1,
-          name: "Name Product",
-          price: 100,
-        },
-        {
-          id: 2,
-          name: "Name Product",
-          price: 100,
-        },
-        {
-          id: 3,
-          name: "Name Product",
-          price: 100,
-        },
-        {
-          id: 4,
-          name: "Name Product",
-          price: 100,
-        },
-        {
-          id: 5,
-          name: "Name Product",
-          price: 100,
-        },
-        {
-          id: 6,
-          name: "Name Product",
-          price: 100,
-        },
-        {
-          id: 7,
-          name: "Name Product",
-          price: 100,
-        },
-        {
-          id: 8,
-          name: "Name Product",
-          price: 100,
-        },
-      ],
-    };
-  }
-  render() {
-    const { questions, aboutItems, productsList } = this.state;
-    return (
-      <div className="app">
-        <Router>
-          <Header />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <HomePage questions={questions} aboutItems={aboutItems} />
-              }
-            />
-            <Route
-              path="/products-page"
-              element={<ProductsPage productsList={productsList} />}
-            />
-            <Route path="/one-product" element={<OneProduct />} />
-          </Routes>
-        </Router>
-      </div>
-    );
-  }
-}
+  const questions = useSelector((state) => state.questions.questions);
+  const aboutItems = useSelector((state) => state.aboutItems.aboutItems);
+  const productsList = useSelector((state) => state.productsList.productsList);
+  const servicesItems = useSelector(
+    (state) => state.servicesItems.servicesItems
+  );
+
+  const toggleHide = () => {
+    setHide(!isHide);
+  };
+
+  return (
+    <div className={isHide ? "app hide" : "app"}>
+      <Router>
+        <Header toggleHide={toggleHide} />
+        <Routes>
+          <Route
+            path="/"
+            element={<HomePage questions={questions} aboutItems={aboutItems} />}
+          />
+          <Route
+            path="/products-page"
+            element={<ProductsPage productsList={productsList} />}
+          />
+          <Route path="/one-product" element={<OneProduct />} />
+          <Route
+            path="/about-us"
+            element={<AboutUs servicesItems={servicesItems} />}
+          />
+          <Route path="/contacts" element={<Contacts />} />
+          <Route
+            path="/products-page/parfumery"
+            element={<ParfumeryCategories />}
+          />
+          <Route
+            path="/products-page/cosmetics"
+            element={<CosmeticsCategories />}
+          />
+        </Routes>
+      </Router>
+    </div>
+  );
+};
 export default App;

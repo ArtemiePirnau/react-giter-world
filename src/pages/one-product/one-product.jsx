@@ -17,15 +17,6 @@ export const OneProduct = () => {
         <div className="one-product__info">
           <div className="one-product__details">
             <Rater total={5} rating={3} interactive="true" />
-            {/* <StarsRating
-              className="one-product__rate"
-              count={5}
-              allowClear
-              symbol="★"
-              starDimension="30px"
-              starHoverColor="#EA4949"
-              starSelectingHoverColor="#EA4949"
-            /> */}
             <p className="one-product__views">
               <span>124</span> REVIEWS
             </p>
