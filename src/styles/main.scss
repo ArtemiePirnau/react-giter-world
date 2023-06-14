@@ -129,6 +129,7 @@ textarea {
 }
 .slick-prev {
   right: 56px;
+  width: 41px;
 }
 .slick-arrow:hover {
   background-color: #eae6fe;
@@ -947,9 +948,9 @@ svg path {
   .slick-next {
     top: 330px;
   }
-  .slick-prev {
-    left: 15px;
-  }
+  // .slick-prev {
+  //   left: 15px;
+  // }
   .slick-next {
     right: 56px;
   }
