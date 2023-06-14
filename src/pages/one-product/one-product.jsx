@@ -16,7 +16,7 @@ export const OneProduct = () => {
         <img className="one-product__img" src={parfume} alt="parfume" />
         <div className="one-product__info">
           <div className="one-product__details">
-            <Rater total={5} rating={3} interactive="true" />
+            <Rater total={5} rating={3} interactive={true} />
             <p className="one-product__views">
               <span>124</span> REVIEWS
             </p>

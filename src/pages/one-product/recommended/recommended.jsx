@@ -48,13 +48,27 @@ export const Recommended = () => {
     slidesToScroll: 1,
     slidesToShow: 3,
     initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1110,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (
     <div className="products section">
       <h3 className="special-title">Recommended</h3>
       <h2 className="special-subtitle product__subtitle">For You</h2>
-      <Slider {...settings}>
+      <Slider className="recommended__slider" {...settings}>
         <div className="product__item">
           <img
             className="product__item-img"

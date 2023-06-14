@@ -582,6 +582,7 @@ svg path {
 
 .one-product {
   &__img {
+    object-fit: cover;
     width: 450px;
     margin-right: 50px;
   }
@@ -816,6 +817,12 @@ svg path {
 }
 
 @media (max-width: 1110px) {
+  .one-product__inner {
+    flex-direction: column;
+  }
+  .one-product__img {
+    margin-bottom: 30px;
+  }
   .slick-track {
     text-align: center;
   }
@@ -830,6 +837,17 @@ svg path {
   }
 }
 @media (max-width: 1086px) {
+  .parfumery-categories__inner,
+  .cosmetics-categories__inner {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px;
+  }
+  .parfumery__item {
+    width: 100%;
+  }
+  .cosmetics__item {
+    width: 100%;
+  }
   .discover {
     flex-wrap: wrap;
   }
@@ -888,6 +906,17 @@ svg path {
   }
 }
 @media (max-width: 768px) {
+  .parfumery-categories__inner,
+  .cosmetics-categories__inner {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 50px;
+  }
+  .one-product__img {
+    width: 100%;
+  }
+  .one-product__info {
+    width: 100%;
+  }
   .about-us__text {
     margin-bottom: 100px;
   }
@@ -984,8 +1013,36 @@ svg path {
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 50px 0;
   }
+  .one-product__title {
+    font-size: 26px;
+    line-height: 36px;
+  }
 }
 @media (max-width: 400px) {
+  .one-product__details {
+    margin-bottom: 20px;
+  }
+  .one-product__title {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 20px;
+  }
+  .one-product__text {
+    font-size: 14px;
+    line-height: 26px;
+    margin-bottom: 30px;
+  }
+  .one-product__price {
+    font-size: 14px;
+    margin-right: 20px;
+  }
+  .one-product__btn {
+    font-size: 14px;
+    padding: 5px 0px 5px 15px;
+  }
+  .recommended__slider {
+    margin-bottom: 150px;
+  }
   .about-us__logo {
     max-width: 100%;
   }
