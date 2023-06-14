@@ -31,7 +31,7 @@ const App = () => {
 
   return (
     <div className={isHide ? "app hide" : "app"}>
-      <HashRouter>
+      <HashRouter basename="/">
         <Header toggleHide={toggleHide} />
         <Routes>
           <Route
