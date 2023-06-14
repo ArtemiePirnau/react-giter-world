@@ -1,4 +1,3 @@
-import { Header } from "../../components/header/header.jsx";
 import { Discover } from "./discover/discover.jsx";
 import { Services } from "./services/services.jsx";
 import { Products } from "./products/products.jsx";

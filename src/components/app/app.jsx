@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  HashRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 
@@ -26,7 +31,7 @@ const App = () => {
 
   return (
     <div className={isHide ? "app hide" : "app"}>
-      <Router>
+      <HashRouter>
         <Header toggleHide={toggleHide} />
         <Routes>
           <Route
@@ -52,7 +57,7 @@ const App = () => {
             element={<CosmeticsCategories />}
           />
         </Routes>
-      </Router>
+      </HashRouter>
     </div>
   );
 };

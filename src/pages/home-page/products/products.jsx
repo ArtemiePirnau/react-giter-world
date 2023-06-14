@@ -47,14 +47,27 @@ export const Products = () => {
     speed: 500,
     slidesToScroll: 1,
     slidesToShow: 3,
-    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1110,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (
     <div className="products section">
       <h3 className="special-title">Products</h3>
       <h2 className="special-subtitle product__subtitle">Perfumery</h2>
-      <Slider {...settings}>
+      <Slider className="products__slider" {...settings}>
         <div className="product__item">
           <img
             className="product__item-img"
