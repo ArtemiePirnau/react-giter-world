@@ -1,7 +1,8 @@
 import $ from "jquery";
 import Slider from "react-slick";
+import { useSelector } from "react-redux";
 
-import sliderImg from "../../../../public/images/slider.jpg";
+// import sliderImg from "../../../../public/images/slider.jpg";
 import prevArrow from "../../../../public/images/prev.svg";
 import nextArrow from "../../../../public/images/next.svg";
 
@@ -62,13 +63,37 @@ export const Products = () => {
       },
     ],
   };
-
+  const parfumeryList = useSelector(
+    (state) => state.parfumeryList.productsList
+  );
   return (
     <div className="products section">
       <h3 className="special-title">Products</h3>
       <h2 className="special-subtitle product__subtitle">Perfumery</h2>
       <Slider className="products__slider" {...settings}>
-        <div className="product__item">
+        {/* <div className="product__item">
+          <img
+            className="product__item-img"
+            src={sliderImg}
+            alt="slider image"
+          />
+          <div className="product__item-info">
+            <p className="product__item-name">Product name</p>
+            <p className="product__item-price">100$</p>
+          </div>
+        </div> */}
+        {parfumeryList.map(({ id, name, price, img }) => {
+          return (
+            <div className="product__item" key={id}>
+              <img className="product__item-img" src={img} alt="slider image" />
+              <div className="product__item-info">
+                <p className="product__item-name">{name}</p>
+                <p className="product__item-price">{price} $</p>
+              </div>
+            </div>
+          );
+        })}
+        {/* <div className="product__item">
           <img
             className="product__item-img"
             src={sliderImg}
@@ -122,18 +147,7 @@ export const Products = () => {
             <p className="product__item-name">Product name</p>
             <p className="product__item-price">100$</p>
           </div>
-        </div>
-        <div className="product__item">
-          <img
-            className="product__item-img"
-            src={sliderImg}
-            alt="slider image"
-          />
-          <div className="product__item-info">
-            <p className="product__item-name">Product name</p>
-            <p className="product__item-price">100$</p>
-          </div>
-        </div>
+        </div> */}
       </Slider>
     </div>
   );

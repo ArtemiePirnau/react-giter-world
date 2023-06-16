@@ -5,15 +5,15 @@ import { Questions } from "./questions/questions.jsx";
 import { Cosmetics } from "./cosmetics/cosmetics.jsx";
 import { About } from "./about/about.jsx";
 import { Footer } from "../../components/footer/footer.jsx";
-export const HomePage = ({ aboutItems, questions }) => {
+export const HomePage = () => {
   return (
     <>
       <Discover />
       <Services />
       <Products />
-      <Questions questions={questions} />
+      <Questions />
       <Cosmetics />
-      <About aboutItems={aboutItems} />
+      <About />
       <Footer />
     </>
   );

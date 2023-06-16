@@ -1,5 +1,7 @@
+import { useSelector } from "react-redux";
 import { Accordion } from "../accordion/accordion.jsx";
-export const Questions = ({ questions }) => {
+export const Questions = () => {
+  const questions = useSelector((state) => state.questions.questions);
   return (
     <div className="question section">
       <h3 className="special-title">Frequently Asked </h3>

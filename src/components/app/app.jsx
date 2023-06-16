@@ -4,7 +4,6 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import { useSelector } from "react-redux";
 import { useState } from "react";
 
 import { Header } from "../header/header.jsx";
@@ -18,13 +17,6 @@ import { CosmeticsCategories } from "../../pages/products-page/cosmetics-categor
 const App = () => {
   const [isHide, setHide] = useState(false);
 
-  const questions = useSelector((state) => state.questions.questions);
-  const aboutItems = useSelector((state) => state.aboutItems.aboutItems);
-  const productsList = useSelector((state) => state.productsList.productsList);
-  const servicesItems = useSelector(
-    (state) => state.servicesItems.servicesItems
-  );
-
   const toggleHide = () => {
     setHide(!isHide);
   };
@@ -34,19 +26,10 @@ const App = () => {
       <HashRouter basename="/">
         <Header toggleHide={toggleHide} />
         <Routes>
-          <Route
-            path="/"
-            element={<HomePage questions={questions} aboutItems={aboutItems} />}
-          />
-          <Route
-            path="/products-page"
-            element={<ProductsPage productsList={productsList} />}
-          />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/products-page" element={<ProductsPage />} />
           <Route path="/one-product" element={<OneProduct />} />
-          <Route
-            path="/about-us"
-            element={<AboutUs servicesItems={servicesItems} />}
-          />
+          <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route
             path="/products-page/parfumery"

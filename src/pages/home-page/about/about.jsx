@@ -1,6 +1,8 @@
+import { useSelector } from "react-redux";
 import { AboutItem } from "../about-item/about-item.jsx";
 
-export const About = ({ aboutItems }) => {
+export const About = () => {
+  const aboutItems = useSelector((state) => state.aboutItems.aboutItems);
   return (
     <div className="about section">
       <h3 className="special-title">More Info</h3>

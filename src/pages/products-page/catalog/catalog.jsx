@@ -4,6 +4,7 @@ export const Catalog = () => {
     <aside className="catalog">
       <h3 className="special-title">Navigation</h3>
       <h2 className="special-subtitle services__subtitle">Catalog</h2>
+      <h6 className="services__label">Choose your destiny</h6>
       <ul className="catalog__list">
         <li className="catalog__item">
           <Link className="catalog__link" to="/products-page/parfumery">

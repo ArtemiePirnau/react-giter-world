@@ -1,6 +1,10 @@
+import { useSelector } from "react-redux";
 import { Footer } from "../../components/footer/footer.jsx";
 
-export const AboutUs = ({ servicesItems }) => {
+export const AboutUs = () => {
+  const servicesItems = useSelector(
+    (state) => state.servicesItems.servicesItems
+  );
   return (
     <>
       <div className="about-us">
