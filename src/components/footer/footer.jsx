@@ -30,7 +30,7 @@ export const Footer = () => {
           </li>
         </ul>
       </nav>
-      <p className="footer__copyright">© 2022 - Guter World</p>
+      <p className="footer__copyright">© 2022 - Giter World</p>
     </footer>
   );
 };

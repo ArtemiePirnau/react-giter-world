@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import slider from "../../public/images/slider.jpg";
-const parfumeryItemsSlice = createSlice({
-  name: "parfumeryList",
+const unisexItemsSlice = createSlice({
+  name: "unisexList",
   initialState: {
     productsList: [
       {
@@ -63,4 +63,4 @@ const parfumeryItemsSlice = createSlice({
   reducers: {},
 });
 
-export default parfumeryItemsSlice.reducer;
+export default unisexItemsSlice.reducer;

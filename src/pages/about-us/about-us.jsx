@@ -1,10 +1,43 @@
+import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { Footer } from "../../components/footer/footer.jsx";
+import logo from "../../../public/images/about-logo.png";
+import building from "../../../public/images/building.svg";
+import square from "../../../public/images/square.svg";
+import cosmetic from "../../../public/images/cosmetic.svg";
 
+import { Footer } from "../../components/footer/footer.jsx";
 export const AboutUs = () => {
-  const servicesItems = useSelector(
-    (state) => state.servicesItems.servicesItems
-  );
+  const { t } = useTranslation();
+  const servicesItems = [
+    {
+      id: 0,
+      icon: logo,
+      title: t("servicesitemtitle1"),
+      subtitle: t("servicesitemsubtitle1"),
+      text: t("servicesitemtext1"),
+    },
+    {
+      id: 1,
+      icon: building,
+      title: t("servicesitemtitle2"),
+      subtitle: t("servicesitemsubtitle2"),
+      text: t("servicesitemtext2"),
+    },
+    {
+      id: 2,
+      icon: square,
+      title: t("servicesitemtitle3"),
+      subtitle: t("servicesitemsubtitle3"),
+      text: t("servicesitemtext3"),
+    },
+    {
+      id: 3,
+      icon: cosmetic,
+      title: t("servicesitemtitle4"),
+      subtitle: t("servicesitemsubtitle4"),
+      text: t("servicesitemtext4"),
+    },
+  ];
   return (
     <>
       <div className="about-us">

@@ -4,6 +4,8 @@ import { StrictMode } from "react";
 import { Provider } from "react-redux";
 import { store } from "./store/store.jsx";
 
+import "./languages/i18n.js";
+
 import App from "./components/app/app.jsx";
 import "./styles/main.scss"
 

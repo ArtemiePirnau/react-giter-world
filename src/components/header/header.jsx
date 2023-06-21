@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import logo from "../../../public/images/logo.svg";
 import cart from "../../../public/images/cart.svg";
@@ -6,14 +7,19 @@ import { Search } from "../search/search.jsx";
 import { useState } from "react";
 
 export const Header = () => {
+  const { t, i18n } = useTranslation();
+
   const [isHide, setHide] = useState(false);
   const [isHiddenMenu, setMenu] = useState(false);
+
   const toggleSearch = () => {
     setHide(!isHide);
   };
+
   const toggleMenu = () => {
     setMenu(!isHiddenMenu);
   };
+
   return (
     <header className="header">
       <div className="header__inner">
@@ -33,22 +39,23 @@ export const Header = () => {
           <ul className="menu__list">
             <li className="menu__item">
               <Link className="menu__link" to="/">
-                Home
+                {t("mainpagelink")}
               </Link>
             </li>
+
             <li className="menu__item">
               <Link className="menu__link" to="/products-page">
-                Products
+                {t("productspagelink")}
               </Link>
             </li>
             <li className="menu__item">
               <Link className="menu__link" to="/about-us">
-                About us
+                {t("aboutpagelink")}
               </Link>
             </li>
             <li className="menu__item">
               <Link className="menu__link" to="/contacts">
-                Contacts
+                {t("contactspagelink")}
               </Link>
             </li>
           </ul>
@@ -59,10 +66,21 @@ export const Header = () => {
         </button>
         <button className="cart">
           <Link to="/cart">
-            <span className="cart__text">Cart</span>
+            <span className="cart__text"> {t("cart")}</span>
             <img className="cart__img" src={cart} alt="cart icon" />
           </Link>
         </button>
+        <select
+          className="header__choose"
+          onChange={(e) => i18n.changeLanguage(e.target.value)}
+        >
+          <option className="header__ru" value="ru">
+            RU
+          </option>
+          <option className="header__ro" value="ro">
+            RO
+          </option>
+        </select>
       </div>
     </header>
   );

@@ -1,8 +1,8 @@
 import { useState } from "react";
-
+import { useTranslation } from "react-i18next";
 export const Accordion = ({ id, text, title }) => {
   const [isActive, setActive] = useState(false);
-
+  const { t, i18n } = useTranslation();
   return (
     <div className="question__item" key={id}>
       <div className="question__item-info" onClick={() => setActive(!isActive)}>
@@ -11,7 +11,7 @@ export const Accordion = ({ id, text, title }) => {
             isActive ? "question__item-title active" : "question__item-title"
           }
         >
-          {title}
+          {t(title)}
         </div>
         <p className="question__item-symbol">
           {isActive ? (
@@ -61,7 +61,7 @@ export const Accordion = ({ id, text, title }) => {
             isActive ? "question__item-text active" : "question__item-text"
           }
         >
-          {text}
+          {t(text)}
         </div>
       )}
     </div>

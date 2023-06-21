@@ -6,17 +6,17 @@ const aboutItemsSlice = createSlice({
     aboutItems: [
       {
         id: 0,
-        title: "Quality",
+        title: "Качество",
         width: 480,
       },
       {
         id: 1,
-        title: "The fragrance",
+        title: "Аромат",
         width: 480,
       },
       {
         id: 2,
-        title: "Price",
+        title: "Цена",
         width: 256,
       },
     ],

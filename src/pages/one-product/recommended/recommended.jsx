@@ -1,10 +1,10 @@
 import $ from "jquery";
 import Slider from "react-slick";
-
+import { useSelector } from "react-redux";
 import sliderImg from "../../../../public/images/slider.jpg";
 import prevArrow from "../../../../public/images/prev.svg";
 import nextArrow from "../../../../public/images/next.svg";
-
+import { ProductItem } from "../../products-page/product-item/product-item.jsx";
 import "../../../../node_modules/slick-slider/slick/slick.min.js";
 import "../../../../node_modules/slick-slider/slick/slick.css";
 
@@ -64,77 +64,24 @@ export const Recommended = () => {
     ],
   };
 
+  const productsList = useSelector((state) => state.parfumeryList.productsList);
+
   return (
     <div className="products section">
-      <h3 className="special-title">Recommended</h3>
-      <h2 className="special-subtitle product__subtitle">For You</h2>
+      <h3 className="special-title">Рекомендуемые</h3>
+      <h2 className="special-subtitle product__subtitle">Для тебя</h2>
       <Slider className="recommended__slider" {...settings}>
-        <div className="product__item">
-          <img
-            className="product__item-img"
-            src={sliderImg}
-            alt="slider image"
-          />
-          <div className="product__item-info">
-            <p className="product__item-name">Product name</p>
-            <p className="product__item-price">100$</p>
-          </div>
-        </div>
-        <div className="product__item">
-          <img
-            className="product__item-img"
-            src={sliderImg}
-            alt="slider image"
-          />
-          <div className="product__item-info">
-            <p className="product__item-name">Product name</p>
-            <p className="product__item-price">100$</p>
-          </div>
-        </div>
-        <div className="product__item">
-          <img
-            className="product__item-img"
-            src={sliderImg}
-            alt="slider image"
-          />
-          <div className="product__item-info">
-            <p className="product__item-name">Product name</p>
-            <p className="product__item-price">100$</p>
-          </div>
-        </div>
-        <div className="product__item">
-          <img
-            className="product__item-img"
-            src={sliderImg}
-            alt="slider image"
-          />
-          <div className="product__item-info">
-            <p className="product__item-name">Product name</p>
-            <p className="product__item-price">100$</p>
-          </div>
-        </div>
-        <div className="product__item">
-          <img
-            className="product__item-img"
-            src={sliderImg}
-            alt="slider image"
-          />
-          <div className="product__item-info">
-            <p className="product__item-name">Product name</p>
-            <p className="product__item-price">100$</p>
-          </div>
-        </div>
-        <div className="product__item">
-          <img
-            className="product__item-img"
-            src={sliderImg}
-            alt="slider image"
-          />
-          <div className="product__item-info">
-            <p className="product__item-name">Product name</p>
-            <p className="product__item-price">100$</p>
-          </div>
-        </div>
+        {productsList.map(({ id, name, img, price }) => {
+          return (
+            <div className="product__item" key={id}>
+              <img className="product__item-img" src={img} alt="slider image" />
+              <div className="product__item-info">
+                <p className="product__item-name">{name}</p>
+                <p className="product__item-price">{price} $</p>
+              </div>
+            </div>
+          );
+        })}
       </Slider>
     </div>
   );

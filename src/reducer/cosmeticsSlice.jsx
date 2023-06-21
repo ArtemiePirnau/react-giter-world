@@ -1,4 +1,4 @@
-import img from "../../public/images/one-product.jpg";
+import img from "../../public/images/cosmetics.jpg";
 import { createSlice } from "@reduxjs/toolkit";
 
 const cosmeticsSlice = createSlice({
@@ -9,19 +9,19 @@ const cosmeticsSlice = createSlice({
         id: 0,
         label: "Makeup",
         img: img,
-        to: "/makeup",
+        to: "/products-page/cosmetics/makeup",
       },
       {
         id: 1,
         label: "Body Care",
         img: img,
-        to: "/body-care",
+        to: "/products-page/cosmetics/body-care",
       },
       {
         id: 2,
         label: "Face Care",
         img: img,
-        to: "/face-care",
+        to: "/products-page/cosmetics/face-care",
       },
     ],
   },

@@ -1,7 +1,9 @@
-# UI
+# 1. Sa pun posibilitatea sa schimbi limba, rusa si romana
 
-# 1. https://dribbble.com/shots/21533996-Beauty-Shop-Concept
+# 2. Sa fac adaptiv pentru ca am adaugat un element nou
 
-# 2. https://dribbble.com/shots/19140873-Product-Page-Niche-Perfume-Store
+# 3. De facut posibilitatea sa treci pe un produs aparte
 
-# 3. http://indigo-holding.com/perfumery/zhenskie-aromaty/parfum-code-collection-for-women
+# https://dev-gang.ru/article/kak-dobavit-podderzhku-neskolkih-jazykov-v-reactjs-f9qkxmmga9/
+
+# De rezolvat problema cu schimbarea limbei pentru questions
