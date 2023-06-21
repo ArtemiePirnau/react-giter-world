@@ -201,6 +201,9 @@ svg path {
   padding-top: 40px;
 }
 .header__choose {
+  position: fixed;
+  left: 243px;
+  bottom: 30px;
   background-color: transparent;
   border: 1px solid #ea4949;
   border-radius: 4px;
@@ -814,6 +817,9 @@ svg path {
   }
   .products__list {
     text-align: center;
+  }
+  .header__choose {
+    left: 10px;
   }
 }
 
