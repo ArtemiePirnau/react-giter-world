@@ -1,7 +1,7 @@
 import $ from "jquery";
 import Slider from "react-slick";
 import { useSelector } from "react-redux";
-
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import prevArrow from "../../../../public/images/prev.svg";
 import nextArrow from "../../../../public/images/next.svg";
@@ -76,13 +76,17 @@ export const Products = () => {
       <Slider className="products__slider" {...settings}>
         {parfumeryList.map(({ id, name, price, img }) => {
           return (
-            <div className="product__item" key={id}>
+            <Link
+              className="product__item"
+              key={id}
+              to={`/one-product/${name}`}
+            >
               <img className="product__item-img" src={img} alt="slider image" />
               <div className="product__item-info">
                 <p className="product__item-name">{name}</p>
                 <p className="product__item-price">{price} $</p>
               </div>
-            </div>
+            </Link>
           );
         })}
       </Slider>

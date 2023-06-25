@@ -88,13 +88,13 @@ export const Cosmetics = () => {
       <Slider className="products__slider" {...settings}>
         {cosmeticsList.map(({ id, img, name, price }) => {
           return (
-            <div className="product__item" key={id}>
+            <a className="product__item" key={id} href="#">
               <img className="product__item-img" src={img} alt="slider image" />
               <div className="product__item-info">
                 <p className="product__item-name">{name}</p>
                 <p className="product__item-price">{price} $</p>
               </div>
-            </div>
+            </a>
           );
         })}
       </Slider>

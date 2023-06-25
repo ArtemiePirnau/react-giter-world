@@ -28,13 +28,13 @@ const App = () => {
   };
 
   return (
-    <div className={isHide ? "app hide" : "app"}>
+    <div className="app">
       <HashRouter basename="/">
         <Header toggleHide={toggleHide} />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/products-page" element={<ProductsPage />} />
-          <Route path="/one-product" element={<OneProduct />} />
+          <Route path="/one-product/:name" element={<OneProduct />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route

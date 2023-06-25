@@ -112,6 +112,10 @@ option {
 .react-star-rate__star .react-star-rate__star--full {
   color: #ea4949;
 }
+.no-matching {
+  text-align: center;
+  font-size: 36px;
+}
 // Slider
 
 .slick-arrow {
@@ -1040,6 +1044,7 @@ svg path {
   .one-product__details {
     margin-bottom: 20px;
   }
+
   .one-product__title {
     font-size: 18px;
     line-height: 28px;
@@ -1105,5 +1110,8 @@ svg path {
   }
   .catalog__link {
     font-size: 14px;
+  }
+  .product__item {
+    width: 100% !important;
   }
 }

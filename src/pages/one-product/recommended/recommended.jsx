@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import sliderImg from "../../../../public/images/slider.jpg";
 import prevArrow from "../../../../public/images/prev.svg";
 import nextArrow from "../../../../public/images/next.svg";
+import { Link } from "react-router-dom";
 import { ProductItem } from "../../products-page/product-item/product-item.jsx";
 import "../../../../node_modules/slick-slider/slick/slick.min.js";
 import "../../../../node_modules/slick-slider/slick/slick.css";
@@ -73,13 +74,17 @@ export const Recommended = () => {
       <Slider className="recommended__slider" {...settings}>
         {productsList.map(({ id, name, img, price }) => {
           return (
-            <div className="product__item" key={id}>
+            <Link
+              className="product__item"
+              key={id}
+              to={`/one-product/${name}`}
+            >
               <img className="product__item-img" src={img} alt="slider image" />
               <div className="product__item-info">
                 <p className="product__item-name">{name}</p>
                 <p className="product__item-price">{price} $</p>
               </div>
-            </div>
+            </Link>
           );
         })}
       </Slider>

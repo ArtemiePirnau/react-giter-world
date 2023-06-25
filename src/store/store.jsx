@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import questionsReducer from "../reducer/questionsSlice.jsx";
-import aboutItemsReducer from "../reducer/aboutItemsSlice.jsx";
+// import questionsReducer from "../reducer/questionsSlice.jsx";
+// import aboutItemsReducer from "../reducer/aboutItemsSlice.jsx";
 import parfumeryListReducer from "../reducer/parfumeryListSlice.jsx";
 import servicesItemsReducer from "../reducer/servicesItemsSlice.jsx";
 import parfumeryReducer from "../reducer/parfumerySlice.jsx";
@@ -13,15 +13,17 @@ import facecareItemsReducer from "../reducer/facecareItemsSlice.jsx";
 import manItemsReducer from "../reducer/manItemsSlice.jsx";
 import womanItemsReducer from "../reducer/womanItemsSlice.jsx";
 import unisexItemsReducer from "../reducer/unisexItemsSlice.jsx";
+
 export const store = configureStore({
   reducer: {
-    questions: questionsReducer,
-    aboutItems: aboutItemsReducer,
+    // questions: questionsReducer,
+    //aboutItems: aboutItemsReducer,
     parfumeryList: parfumeryListReducer,
     servicesItems: servicesItemsReducer,
     parfumery: parfumeryReducer,
     cosmetics: cosmeticsReducer,
     cosmeticsList: cosmeticsListReducer,
+    // Acestea 6 de comentat de jos
     makeupList: makeupItemsReducer,
     bodycareList: bodycareItemsReducer,
     facecareList: facecareItemsReducer,
