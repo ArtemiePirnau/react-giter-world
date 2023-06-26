@@ -1,13 +1,10 @@
-import $ from "jquery";
 import Slider from "react-slick";
+import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import sliderImg from "../../../../public/images/slider.jpg";
+import { Link } from "react-router-dom";
+
 import prevArrow from "../../../../public/images/prev.svg";
 import nextArrow from "../../../../public/images/next.svg";
-import { Link } from "react-router-dom";
-import { ProductItem } from "../../products-page/product-item/product-item.jsx";
-import "../../../../node_modules/slick-slider/slick/slick.min.js";
-import "../../../../node_modules/slick-slider/slick/slick.css";
 
 const SliderPrev = ({ currentSlide, slideCount, ...props }) => {
   return (
@@ -66,11 +63,13 @@ export const Recommended = () => {
   };
 
   const productsList = useSelector((state) => state.parfumeryList.productsList);
-
+  const { t } = useTranslation();
   return (
     <div className="products section">
-      <h3 className="special-title">Рекомендуемые</h3>
-      <h2 className="special-subtitle product__subtitle">Для тебя</h2>
+      <h3 className="special-title">{t("recommendedtitle")}</h3>
+      <h2 className="special-subtitle product__subtitle">
+        {t("recommendedsubtitle")}
+      </h2>
       <Slider className="recommended__slider" {...settings}>
         {productsList.map(({ id, name, img, price }) => {
           return (

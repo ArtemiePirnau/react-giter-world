@@ -20,6 +20,8 @@ import { FaceCare } from "../../pages/facecare/facecare.jsx";
 import { Man } from "../../pages/man/man.jsx";
 import { Woman } from "../../pages/woman/woman.jsx";
 import { Unisex } from "../../pages/unisex/unisex.jsx";
+import { SearchResult } from "../search-result.jsx/search-result.jsx";
+
 const App = () => {
   const [isHide, setHide] = useState(false);
 
@@ -32,7 +34,7 @@ const App = () => {
       <HashRouter basename="/">
         <Header toggleHide={toggleHide} />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route exact path="/" element={<HomePage />} />
           <Route path="/products-page" element={<ProductsPage />} />
           <Route path="/one-product/:name" element={<OneProduct />} />
           <Route path="/about-us" element={<AboutUs />} />
@@ -57,6 +59,7 @@ const App = () => {
             path="/products-page/cosmetics/face-care"
             element={<FaceCare />}
           />
+          <Route path="/search" element={<SearchResult />} />
         </Routes>
       </HashRouter>
     </div>

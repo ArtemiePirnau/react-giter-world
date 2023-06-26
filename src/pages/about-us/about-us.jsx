@@ -1,11 +1,11 @@
 import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
+import { Footer } from "../../components/footer/footer.jsx";
+
 import logo from "../../../public/images/about-logo.png";
 import building from "../../../public/images/building.svg";
 import square from "../../../public/images/square.svg";
 import cosmetic from "../../../public/images/cosmetic.svg";
 
-import { Footer } from "../../components/footer/footer.jsx";
 export const AboutUs = () => {
   const { t } = useTranslation();
   const servicesItems = [

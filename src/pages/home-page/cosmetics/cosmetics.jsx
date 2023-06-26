@@ -1,22 +1,9 @@
-import $ from "jquery";
 import Slider from "react-slick";
 import { useTranslation } from "react-i18next";
-import sliderImg from "../../../../public/images/slider.jpg";
-import prevArrow from "../../../../public/images/prev.svg";
-import nextArrow from "../../../../public/images/next.svg";
 import { useSelector } from "react-redux";
 
-// import "../../../node_modules/slick-slider/slick/slick.min.js";
-// import "../../../node_modules/slick-slider/slick/slick.css";
-
-//TODO: De facut sageti custom
-let settings = {
-  infinite: false,
-  speed: 500,
-  slidesToScroll: 1,
-  slidesToShow: 3,
-  initialSlide: 0,
-};
+import prevArrow from "../../../../public/images/prev.svg";
+import nextArrow from "../../../../public/images/next.svg";
 
 const SliderPrev = ({ currentSlide, slideCount, ...props }) => {
   return (

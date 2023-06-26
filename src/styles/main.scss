@@ -88,6 +88,9 @@ option {
   line-height: 55px;
   margin-bottom: 32px;
 }
+.react-rater {
+  margin-bottom: 20px;
+}
 .react-rater .react-rater-star {
   font-size: 34px;
 }
@@ -115,6 +118,11 @@ option {
 .no-matching {
   text-align: center;
   font-size: 36px;
+}
+.products__list.search__list {
+  .products__item {
+    width: 250px !important;
+  }
 }
 // Slider
 
@@ -363,7 +371,6 @@ svg path {
     margin-bottom: 55px;
   }
   &__label {
-    //text-align: center;
     color: #656d72;
     font-size: 12px;
     font-weight: 500;
@@ -643,7 +650,7 @@ svg path {
     font-weight: 600;
     font-size: 16px;
     line-height: 19px;
-    margin-bottom: 15px;
+    margin-bottom: 70px;
     display: flex;
   }
   &__available {
@@ -755,6 +762,7 @@ svg path {
   background-size: cover;
 }
 .parfumery__item-label {
+  text-align: center;
   color: #fff;
   font-size: 36px;
   font-weight: 700;
@@ -783,6 +791,7 @@ svg path {
   background-size: cover;
 }
 .cosmetics__item-label {
+  text-align: center;
   color: #fff;
   font-size: 36px;
   font-weight: 700;

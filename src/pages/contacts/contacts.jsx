@@ -1,6 +1,7 @@
 import { Form } from "./form/form.jsx";
 import { useTranslation } from "react-i18next";
 import { Footer } from "../../components/footer/footer.jsx";
+
 export const Contacts = () => {
   const { t } = useTranslation();
   return (

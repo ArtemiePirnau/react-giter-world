@@ -1,8 +1,8 @@
-import $ from "jquery";
 import Slider from "react-slick";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+
 import prevArrow from "../../../../public/images/prev.svg";
 import nextArrow from "../../../../public/images/next.svg";
 

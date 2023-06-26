@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Accordion } from "../accordion/accordion.jsx";
+
 export const Questions = () => {
   const { t } = useTranslation();
   const questions = [

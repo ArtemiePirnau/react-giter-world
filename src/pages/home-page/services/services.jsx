@@ -3,8 +3,10 @@ import { useTranslation } from "react-i18next";
 import parfume from "../../../../public/images/parfume.svg";
 import mascara from "../../../../public/images/mascara.svg";
 import cream from "../../../../public/images/cream.svg";
+
 export const Services = () => {
   const { t } = useTranslation();
+
   return (
     <div className="services section">
       <h3 className="special-title">{t("servicestitle")}</h3>

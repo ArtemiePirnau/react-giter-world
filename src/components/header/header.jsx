@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+
 import logo from "../../../public/images/logo.svg";
-import cart from "../../../public/images/cart.svg";
 import search from "../../../public/images/search.svg";
 import { Search } from "../search/search.jsx";
-import { useState } from "react";
 
 export const Header = () => {
   const { t, i18n } = useTranslation();
@@ -63,12 +63,6 @@ export const Header = () => {
         <Search isHide={isHide} toggleSearch={toggleSearch} />
         <button className="search__btn" onClick={toggleSearch}>
           <img className="search__img" src={search} alt="search" />
-        </button>
-        <button className="cart">
-          <Link to="/cart">
-            <span className="cart__text"> {t("cart")}</span>
-            <img className="cart__img" src={cart} alt="cart icon" />
-          </Link>
         </button>
         <select
           className="header__choose"
