@@ -1,6 +1,6 @@
 import search from "../../../public/images/search.svg";
 import close from "../../../public/images/close.svg";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { searchProducts } from "../../reducer/parfumeryListSlice.jsx";
