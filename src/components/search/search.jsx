@@ -14,7 +14,7 @@ export const Search = ({ isHide, toggleSearch }) => {
   };
 
   const onSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault;
     navigate("/search");
   };
   return (
@@ -37,9 +37,14 @@ export const Search = ({ isHide, toggleSearch }) => {
           alt="search"
         />
       </button>
-      <button className="search__btn" onClick={toggleSearch}>
-        <img className="search__form-close" src={close} alt="close" />
-      </button>
+      <a className="search__btn">
+        <img
+          onClick={toggleSearch}
+          className="search__form-close"
+          src={close}
+          alt="close"
+        />
+      </a>
     </form>
   );
 };
